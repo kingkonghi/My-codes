@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat Jan 22 12:05:59 2022
+# Process ID: 26592
+# Current directory: D:/CENG3430/lab1_2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3680 D:\CENG3430\lab1_2\lab1_2.xpr
+# Log file: D:/CENG3430/lab1_2/vivado.log
+# Journal file: D:/CENG3430/lab1_2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/CENG3430/lab1_2/lab1_2.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_lab1_2.tcl
+close_sim
