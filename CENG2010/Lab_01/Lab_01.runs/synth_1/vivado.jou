@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Feb  3 15:14:49 2021
+# Process ID: 6600
+# Current directory: C:/Users/kingk/OneDrive/New Folder/CENG2010/Lab_01/Lab_01.runs/synth_1
+# Command line: vivado.exe -log nand_gate.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source nand_gate.tcl
+# Log file: C:/Users/kingk/OneDrive/New Folder/CENG2010/Lab_01/Lab_01.runs/synth_1/nand_gate.vds
+# Journal file: C:/Users/kingk/OneDrive/New Folder/CENG2010/Lab_01/Lab_01.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source nand_gate.tcl -notrace

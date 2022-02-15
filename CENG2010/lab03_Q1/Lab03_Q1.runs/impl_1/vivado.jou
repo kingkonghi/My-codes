@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Feb 24 19:10:56 2021
+# Process ID: 22704
+# Current directory: C:/Users/kingk/OneDrive/New Folder/CENG2010/lab03_Q1/Lab03_Q1.runs/impl_1
+# Command line: vivado.exe -log Lab03_Q1.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Lab03_Q1.tcl -notrace
+# Log file: C:/Users/kingk/OneDrive/New Folder/CENG2010/lab03_Q1/Lab03_Q1.runs/impl_1/Lab03_Q1.vdi
+# Journal file: C:/Users/kingk/OneDrive/New Folder/CENG2010/lab03_Q1/Lab03_Q1.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source Lab03_Q1.tcl -notrace

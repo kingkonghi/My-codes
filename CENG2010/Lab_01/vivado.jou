@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Sep 22 16:41:43 2021
+# Process ID: 4504
+# Current directory: C:/Users/kingk/OneDrive/桌面/NEWfolder/CENG2010/Lab_01
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22076 C:\Users\kingk\OneDrive\桌面\NEWfolder\CENG2010\Lab_01\Lab_01.xpr
+# Log file: C:/Users/kingk/OneDrive/桌面/NEWfolder/CENG2010/Lab_01/vivado.log
+# Journal file: C:/Users/kingk/OneDrive/桌面/NEWfolder/CENG2010/Lab_01\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/kingk/OneDrive/桌面/NEWfolder/CENG2010/Lab_01/Lab_01.xpr
+update_compile_order -fileset sources_1

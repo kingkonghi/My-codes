@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Sep 22 16:41:43 2021
+# Process ID: 4504
+# Current directory: C:/Users/kingk/OneDrive/桌面/NEWfolder/CENG2010/Lab_01
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22076 C:\Users\kingk\OneDrive\桌面\NEWfolder\CENG2010\Lab_01\Lab_01.xpr
+# Log file: C:/Users/kingk/OneDrive/桌面/NEWfolder/CENG2010/Lab_01/vivado.log
+# Journal file: C:/Users/kingk/OneDrive/桌面/NEWfolder/CENG2010/Lab_01\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/kingk/OneDrive/桌面/NEWfolder/CENG2010/Lab_01/Lab_01.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/kingk/OneDrive/New Folder/CENG2010/Lab_01' since last save.
+INFO: [filemgmt 56-1] Board Part Repository Path: Directory not found as 'C:/Users/kingk/OneDrive/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store'; using path 'C:/Users/kingk/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store' instead.
+WARNING: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'C:/Users/kingk/OneDrive/桌面/NEWfolder/CENG2010/Lab_01/Lab_01.gen/sources_1', nor could it be found using path 'C:/Users/kingk/OneDrive/New Folder/CENG2010/Lab_01/Lab_01.gen/sources_1'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/kingk/OneDrive/桌面/桌面/New Folder/CENG2010/basys3_lab01.xdc', nor could it be found using path 'C:/Users/kingk/OneDrive/桌面/New Folder/CENG2010/basys3_lab01.xdc'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Sep 22 16:44:06 2021...
