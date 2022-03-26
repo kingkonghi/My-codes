@@ -1,4 +1,7 @@
 import torch
 
-x= torch.rand(5,3)
-print(x)
+a= torch.Tensor([[1,2],[3,4]])
+print(a**2)
+
+y= torch.sum(a)
+print(y)
