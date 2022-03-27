@@ -35,6 +35,61 @@ void readfileheader(FILE *,char**,int *);
 void compress(FILE*, FILE*);
 void decompress(FILE*, FILE*);
 
+class Node{
+	public:
+	std::string word;
+	Node * next;
+};
+
+void append(Node** head, std::string words){
+	Node* new_node = new Node();
+	Node* last = *head;
+
+	new_node->word = words;
+	new_node->next = NULL;
+	if(*head ==NULL){
+		*head=new_node;
+		return;}
+	while( last->next !=NULL){
+		last=last->next;
+	}
+	last->next = new_node;
+	return;
+}
+
+
+void remove(Node** head, std::string words){
+	Node* temp = *head;
+	Node* previous = NULL;
+	if (temp != NULL && temp->word == words)
+    {
+        *head = temp->next; // Changed head
+        delete temp;            // free old head
+        return;
+    }else{
+	while(temp!=NULL && temp->word !=words){
+		previous = temp;
+		temp = temp->next;
+	}
+	if(temp==NULL)return;
+
+	previous->next = temp->next;
+	delete temp;}
+}
+
+int search(Node* head, std::string x)
+{
+	int a=0;
+    Node* current = head; // Initialize current
+    while (current != NULL)
+    {
+        if (current->word == x){
+            return a;}
+        current = current->next;
+		a++;
+    }
+    return a;
+}
 
 int main(int argc, char **argv)
 {
@@ -233,7 +288,7 @@ void compress(FILE *input, FILE *output)
 {
 
 	/* ADD CODES HERE */
-	unsigned int X=0;
+	/*unsigned int X=0;
 	char C,N;
 	std::string Cu="",CodeDict[4096];
 	for(int i =0;i<256;i++){
@@ -241,7 +296,6 @@ void compress(FILE *input, FILE *output)
 		CodeDict[i] = n;
 	}
 	int end = 256,search =0;
-	bool first =0;
 	if((C = fgetc(input)) == EOF)return;
 	Cu =C;
 	X=C;
@@ -272,38 +326,45 @@ void compress(FILE *input, FILE *output)
 		}
 	}
 	write_code(output,X,CODE_SIZE);
-	write_code(output,4095,CODE_SIZE);
+	write_code(output,4095,CODE_SIZE);*/
+	unsigned int X=0;
+	int end = 256,index=0;
+	char C,N;
+	std::string Cu="";
+	std::string m="";
+	Node* CodeDict = NULL;
 
-	/*std::string Cu="",CodeDict[4096],P="";
-	int search =0,end=256;
-	char out ,C;
+	for(int i =0;i<=255;i++){
+		m = char(i);
+		append(&CodeDict,m);
 
-	for(int i =0;i<256;i++){
-		char n = i;
-		CodeDict[i] = n;
 	}
 
-	P = fgetc(input);
-	while((C = fgetc(input)) != EOF){
-		search =0;
-			while(search <end){
-				Cu = P+C;
-				if(CodeDict[search]==Cu){
-					P=Cu;
-					break;
-				}
-				search++;
-			}
-			if(search ==end){
-				write_code(output,(int)search,CODE_SIZE);
-			}
-			if(end>4095){
+	if((C = fgetc(input)) == EOF)return;
+	Cu =C;
+	X=C;
+	while((N= fgetc(input))!=EOF){
+		index = search(CodeDict,Cu+N);
+
+		if(index == end){
+			if(end>=4095){
 				end=256;
 			}
-			CodeDict[end++]=P+C;
-			P=C;
+			write_code(output,X,CODE_SIZE);
+			append(&CodeDict,Cu+N);
+			end++;
+			Cu = N;
+			X= N;
+
+		}else{
+			Cu = Cu+N;
+			X=  index;
+			
 		}
-		write_code(output,search,CODE_SIZE);*/
+	}
+	write_code(output,X,CODE_SIZE);
+	write_code(output,4095,CODE_SIZE);
+
 }
 
 
