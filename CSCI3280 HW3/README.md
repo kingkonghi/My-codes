@@ -26,7 +26,7 @@ i.Decompress your compressed file using example program.
 ii.Decompress your compressed file using your own programe. 
 Then check whether the md5sum is the same with the original files.
 
-##Version
+## Version
 - v1.1.1  Fix the issue that the linked list cannot be appended when the dictionary size exceeds 4096 
 - v1.1.0  Changed to use linked list in compress function
 - v1.0.0  Finished program with full version of the algorithm
