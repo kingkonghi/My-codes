@@ -1,12 +1,11 @@
 # Assignment 3 - LZW Compression
 
 ## Contents
-- Code Skeleton: lzw_skeleton.c lzw_skeleton.cpp
+- Code Skeleton: lzw_skeleton.c
 - Program Example: lzw_example_win.exe (just for windows platform)
   lzw_example_linux.out (for Linux)
   lzw_example_macos.out (for MacOS)
 - Test File: Ephesians.txt, Matthew.txt
-- Submitted file: lzw.cpp
 
 ## Task
 
@@ -26,11 +25,6 @@ ii.Decompress your generated lzw with example program.
 i.Decompress your compressed file using example program.
 ii.Decompress your compressed file using your own programe. 
 Then check whether the md5sum is the same with the original files.
-
-## Version of my function
-- V1.1.0: In compression part, the dictionary changed to use linked list.
-- V1.0.1: The size of compressed file gets smaller.
-- V1.0.0: The program includes full version of algorithm.
 
 
 

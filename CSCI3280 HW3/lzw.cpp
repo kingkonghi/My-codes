@@ -57,30 +57,10 @@ void append(Node** head, std::string words){
 	return;
 }
 
-
-void remove(Node** head, std::string words){
-	Node* temp = *head;
-	Node* previous = NULL;
-	if (temp != NULL && temp->word == words)
-    {
-        *head = temp->next; // Changed head
-        delete temp;            // free old head
-        return;
-    }else{
-	while(temp!=NULL && temp->word !=words){
-		previous = temp;
-		temp = temp->next;
-	}
-	if(temp==NULL)return;
-
-	previous->next = temp->next;
-	delete temp;}
-}
-
 int search(Node* head, std::string x)
 {
 	int a=0;
-    Node* current = head; // Initialize current
+    Node* current = head;
     while (current != NULL)
     {
         if (current->word == x){
@@ -89,6 +69,44 @@ int search(Node* head, std::string x)
 		a++;
     }
     return a;
+}
+
+void deleteNode(Node** head, int position)
+{
+    if (*head == NULL)
+        return;
+    Node* temp = *head;
+    if (position == 0) {
+        *head = temp->next;
+        free(temp);
+        return;
+    }
+ 
+    for (int i = 0; temp != NULL && i < position - 1; i++)
+        temp = temp->next;
+    if (temp == NULL || temp->next == NULL)
+        return;
+    Node* next = temp->next->next;
+    free(temp->next);
+    temp->next = next;
+}
+void insertAfter(Node* previous, std::string words)
+{
+ 
+    Node* new_node = new Node();
+    new_node->word = words;
+    new_node->next = previous->next;
+    previous->next = new_node;
+}
+void destroy(Node** target){
+	Node* current = *target;
+	Node* nextn=NULL;
+	while(current!=NULL){
+		nextn=current->next;
+		free(current);
+		current=nextn;
+	}
+	*target=NULL;
 }
 
 int main(int argc, char **argv)
@@ -287,46 +305,6 @@ void write_code(FILE *output, unsigned int code, unsigned int code_size)
 void compress(FILE *input, FILE *output)
 {
 
-	/* ADD CODES HERE */
-	/*unsigned int X=0;
-	char C,N;
-	std::string Cu="",CodeDict[4096];
-	for(int i =0;i<256;i++){
-		char n = i;
-		CodeDict[i] = n;
-	}
-	int end = 256,search =0;
-	if((C = fgetc(input)) == EOF)return;
-	Cu =C;
-	X=C;
-	while((N= fgetc(input))!=EOF){
-		search =0;
-		while(search<end){
-			if(CodeDict[search]==Cu+N)
-			{
-			break;}
-			search++;
-		}
-		//printf("%d ",search);
-		if(search == end){
-			if(end>=4095){
-				end=256;
-			}
-			write_code(output,X,CODE_SIZE);
-		
-			CodeDict[end++] = Cu+N;
-
-			Cu = N;
-			X= N;
-			
-		}else{
-			Cu = Cu+N;
-			X= search;
-
-		}
-	}
-	write_code(output,X,CODE_SIZE);
-	write_code(output,4095,CODE_SIZE);*/
 	unsigned int X=0;
 	int end = 256,index=0;
 	char C,N;
@@ -337,7 +315,6 @@ void compress(FILE *input, FILE *output)
 	for(int i =0;i<=255;i++){
 		m = char(i);
 		append(&CodeDict,m);
-
 	}
 
 	if((C = fgetc(input)) == EOF)return;
@@ -347,11 +324,17 @@ void compress(FILE *input, FILE *output)
 		index = search(CodeDict,Cu+N);
 
 		if(index == end){
-			if(end>=4095){
+			if(end>=4096){
 				end=256;
+				destroy(&CodeDict);
+				for(int i =0;i<=255;i++){
+					m = char(i);
+					append(&CodeDict,m);
+				}
 			}
 			write_code(output,X,CODE_SIZE);
 			append(&CodeDict,Cu+N);
+			
 			end++;
 			Cu = N;
 			X= N;
@@ -364,7 +347,7 @@ void compress(FILE *input, FILE *output)
 	}
 	write_code(output,X,CODE_SIZE);
 	write_code(output,4095,CODE_SIZE);
-
+	delete CodeDict;
 }
 
 

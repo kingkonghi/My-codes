@@ -1,2 +1,4 @@
-for i in range(10000000):
-    print(chr(i%26+65), end='')
+with open('a_z.txt', 'w') as f:
+    for i in range(1000000):
+        f.write(chr(i%26+65))
+    

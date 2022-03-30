@@ -1,4 +1,5 @@
 import random
-
-for i in range(10000000):
-    print(chr(random.randint(0, 25) + 65), end = '')
+with open('ran.txt', 'w') as f:
+    for i in range(2000000):
+        f.write(chr(random.randint(0, 25) + 65))
+    
