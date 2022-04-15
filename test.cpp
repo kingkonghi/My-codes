@@ -1,11 +1,26 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <malloc.h>
-#include <string.h>
-int main(void){
+#include <string>
+using namespace std;
 
-int* a=0;
-printf("%d %d %x\n",a,&a,&a);
-int* b= malloc(strlen(a)+1);
+bool subset(char a[],char b[]){
+    bool sub = false;
+    for(int i=0;i<sizeof(b);i++){
+        for(int j=0;j<sizeof(a);j++){
+            sub = false;
+            if(b[i] == a[j]){
+            sub = true; break;
+            }
+            
+        }
+        if(sub== false)break;
+    }   
+    return sub;
+}
+
+int main(void){
+    char a [10] ={'A','B','D'};
+    char b [10] ={'A','A','C','D'};
+
+    bool sub = subset(a,b);
+    printf("%d",sub);
 }
